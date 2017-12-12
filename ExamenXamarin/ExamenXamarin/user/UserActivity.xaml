@@ -1,10 +1,40 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ExamenXamarin.user.UserActivity">
+             x:Class="ExamenXamarin.user.UserActivity"
+             BackgroundColor="#ff5400"
+             >
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin Forms!" />
+        <StackLayout Orientation="Vertical"  VerticalOptions="Start">
+            <StackLayout Orientation="Horizontal" Padding="30,5,30,5">
+                <Label TextColor="#fffc7f" FontSize="12" HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand" x:Name="lblBienvenido" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Padding="30,5,30,5">
+                <Label TextColor="#fffc7f" Text="DNI" FontSize="12" HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand" />
+                <Label TextColor="#fffc7f" Text="Horario:" FontSize="12" HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand" />
+                <Label TextColor="#fffc7f" Text="Objetivo" FontSize="12" HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Padding="30,5,30,5">
+                <Label TextColor="#fffc7f" x:Name="lblDNI" FontSize="12" HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand" />
+                <Label TextColor="#fffc7f" x:Name="lblHorario" FontSize="12" HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand" />
+                <Label TextColor="#fffc7f" x:Name="lblObjetivo" FontSize="12" HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Padding="30,5,30,5">
+                <Label TextColor="#fffc7f" Text="Edad" FontSize="12" HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand" />
+                <Label TextColor="#fffc7f" Text="Altura:" FontSize="12" HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand" />
+                <Label TextColor="#fffc7f" Text="Peso" FontSize="12" HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand" />
+                <Label TextColor="#fffc7f" Text="IMC" FontSize="12" HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Padding="30,5,30,5">
+                <Label TextColor="#fffc7f" x:Name="lblEdad" FontSize="12" HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand" />
+                <Label TextColor="#fffc7f" x:Name="lblAltura" FontSize="12" HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand" />
+                <Label TextColor="#fffc7f" x:Name="lblPeso" FontSize="12" HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand" />
+                <Label TextColor="#fffc7f" x:Name="lblImc" FontSize="12" HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Padding="30,5,30,5">
+                <Button HorizontalOptions="FillAndExpand" Text="Cambiar usuario" VerticalOptions="Center"  x:Name="btnBack"
+                        TextColor="#fffc7f"/>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

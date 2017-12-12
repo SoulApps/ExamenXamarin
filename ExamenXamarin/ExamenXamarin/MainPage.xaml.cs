@@ -44,7 +44,7 @@ namespace ExamenXamarin
             // Obtenemos los datos
             string name = "";
             string passwd = "";
-            Usuario user;
+            Usuario user = null;
 
 
             // validación
@@ -79,7 +79,7 @@ namespace ExamenXamarin
                         {
                             // Si la password es correcta
                             // miramos el tipo
-                            if (user.TIPO.Equals("User"))
+                            if (user.TIPO.Equals("USUARIO"))
                             {
                                 await ShowClientActivityAsync("USUARIO", user);
                             }
@@ -114,7 +114,7 @@ namespace ExamenXamarin
             switch (userType)
             {
                 case "USUARIO":
-                    await Navigation.PushModalAsync(new UserActivity());
+                    await Navigation.PushModalAsync(new UserActivity(user));
                     break;
                 case "GERENTE":
                     await Navigation.PushModalAsync(new GerenteActivity());

@@ -30,6 +30,18 @@ namespace ExamenXamarin.gerente
                  await ConfirmData();
             };
             //botones
+            btnCambiarUser.Clicked += async (sender, args) =>
+            {
+                await OpenMainPageAsync();
+            };
+        }
+
+        /// <summary>
+        /// Método que abrirá la ventana de mainPage
+        /// </summary>
+        private async Task OpenMainPageAsync()
+        {
+            await Navigation.PushModalAsync(new MainPage());
         }
 
 
@@ -173,6 +185,8 @@ namespace ExamenXamarin.gerente
 
                         // agregamos el usuario
                         await App.DataRepo.AddNewUser(usuario);
+                        //recargamos la lista
+                        await LoadDataAsync();
                     }
                 }
             }

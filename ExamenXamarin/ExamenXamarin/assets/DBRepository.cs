@@ -203,7 +203,9 @@ namespace ExamenXamarin
             return horariosList;
         }
 
-        
+        /// <summary>
+        /// Método que agrega un nuevo usuario
+        /// </summary>
         public async Task AddNewUser(Usuario user)
         {
             int result = 0;
