@@ -121,6 +121,7 @@ namespace ExamenXamarin.gerente
         /// <remarks>Comprobamos que todos los datos estén rellenos o sean correctos para introducir los datos</remarks>
         private async Task ConfirmData()
         {
+            lblError.IsVisible = false;
             if (String.IsNullOrEmpty(txtName.Text) || String.IsNullOrEmpty(txtAltura.Text) || String.IsNullOrEmpty(txtDNI.Text) ||
                 String.IsNullOrEmpty(txtEdad.Text) || String.IsNullOrEmpty(txtPeso.Text))
             {
@@ -129,7 +130,51 @@ namespace ExamenXamarin.gerente
             }
             else
             {
-                //test
+                // si no, miramos el campo del DNI
+                if(txtDNI.Text.Length != 9)
+                {
+                    lblError.Text = MessageUtils.ErrorCamposNoRellenos;
+                    lblError.IsVisible = true;
+                }
+                else
+                {
+                    // intentamos agregar el usuario a la BBDD
+                    // comprobamos que exista el usuario
+                    string dni = txtDNI.Text;
+                    Usuario user;
+
+                    user = await App.DataRepo.GetUserByDNIAsync(dni);
+
+                    // si no es igual a null, ya existe, por lo que mostramos un error
+                    if(user != null)
+                    {
+                        lblError.Text = MessageUtils.ElUsuarioExiste;
+                        lblError.IsVisible = true;
+                    }
+                    else
+                    {
+                        int altura = int.Parse(txtAltura.Text);
+                        double peso = double.Parse(txtPeso.Text);
+
+                        double imc = peso / (Math.Sqrt((altura / 100)));
+                        Usuario usuario = new Usuario
+                        {
+                            DNI = dni,
+                            NOMBRE = txtName.Text,
+                            PASSWORD = dni,
+                            HORARIO = ((Horario)pickerHorario.SelectedItem).ID,
+                            EDAD = int.Parse(txtEdad.Text),
+                            ALTURA = altura,
+                            PESO = peso,
+                            IMC = imc,
+                            OBJETIVO = ((Objetivo) pickerObjetivo.SelectedItem).ID,
+                            TIPO = "USUARIO"
+                        };
+
+                        // agregamos el usuario
+                        await App.DataRepo.AddNewUser(usuario);
+                    }
+                }
             }
         }
     }

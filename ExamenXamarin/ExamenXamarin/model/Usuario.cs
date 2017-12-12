@@ -11,7 +11,7 @@ namespace ExamenXamarin.model
     /// Clase Usuario
     /// </summary>
     [Table("USUARIOS")]
-    class Usuario
+    public class Usuario
     {
         /// <summary>
         /// Propiedad DNI
@@ -34,7 +34,7 @@ namespace ExamenXamarin.model
         /// <summary>
         /// Propiedad HORARIO
         /// </summary>
-        public int HORARIO{ get; set; }
+        public int HORARIO { get; set; }
 
 
         /// <summary>

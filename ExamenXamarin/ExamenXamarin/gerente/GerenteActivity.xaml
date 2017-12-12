@@ -12,8 +12,8 @@
                 <Label TextColor="#fffc7f" Text="Horario" FontSize="12" HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand" />
             </StackLayout>
             <StackLayout Orientation="Horizontal" Padding="30,5,30,5">
-                <Entry HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand" x:Name="txtName"/>
-                <Entry HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand" x:Name="txtDNI"/>
+                <Entry HorizontalOptions="FillAndExpand"   x:Name="txtName"/>
+                <Entry HorizontalOptions="FillAndExpand"   x:Name="txtDNI"/>
                 <Picker Title="Horario"
                         ItemsSource="{Binding Horario}}"
                         ItemDisplayBinding="{Binding HORARIO}"
@@ -30,10 +30,10 @@
                 <Label TextColor="#fffc7f" Text="Objetivo" FontSize="12" HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand"  />
             </StackLayout>
             <StackLayout Orientation="Horizontal" Padding="30,5,30,5">
-                <Entry HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand" x:Name="txtEdad"/>
-                <Entry HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand" x:Name="txtAltura"/>
+                <Entry HorizontalOptions="FillAndExpand"   x:Name="txtEdad"/>
+                <Entry HorizontalOptions="FillAndExpand"   x:Name="txtAltura"/>
                 <Label TextColor="#fffc7f" Text="cm" FontSize="12" HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand" />
-                <Entry HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand" x:Name="txtPeso"/>
+                <Entry HorizontalOptions="FillAndExpand"   x:Name="txtPeso"/>
                 <Label TextColor="#fffc7f" Text="Kg" FontSize="12" HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand" />
                 <Picker Title="Objetivo"
                         ItemsSource="{Binding Objetivo}}"
@@ -45,7 +45,7 @@
                         TextColor="#fffc7f"/>
             </StackLayout>
             <StackLayout Orientation="Horizontal" Padding="30,5,30,5">
-                <Label TextColor="#fffc7f" FontSize="12" x:Name="lblError" HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand" />
+                <Label TextColor="#fffc7f" FontSize="12" x:Name="lblError" HorizontalOptions="CenterAndExpand"  VerticalOptions="FillAndExpand" />
             </StackLayout>
             <StackLayout Orientation="Horizontal" Padding="30,5,30,5">
                 <Label TextColor="#fffc7f" FontSize="12" 

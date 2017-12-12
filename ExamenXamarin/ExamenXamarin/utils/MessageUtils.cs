@@ -14,6 +14,7 @@ namespace ExamenXamarin.utils
         public static string ErrorInserteContra = "Debe introducir la contraseña";
         public static string ErrorContraNoValida = "La contraseña no es correcta";
         public static string ErrorCamposNoRellenos = "Por favor, revise los datos";
+        public static string ElUsuarioExiste = "El usuario ya existe.";
 
     }
 }

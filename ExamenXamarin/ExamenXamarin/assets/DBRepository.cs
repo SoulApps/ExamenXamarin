@@ -202,6 +202,20 @@ namespace ExamenXamarin
             //Se devuelve la lista de personas
             return horariosList;
         }
+
+        
+        public async Task AddNewUser(Usuario user)
+        {
+            int result = 0;
+            try
+            {
+                result = await conn.InsertAsync(user);
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = string.Format("Failed to add user. Error: {0}", ex.Message);
+            }
+        }
         //---------------- [ GET DATA ] -----------------
     }
 }
